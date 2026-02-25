@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>MathOne Tutoring Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>MathOne Tutoring Portal</h1>
+    <div class="header-actions">
+      <span id="userEmail" class="muted"></span>
+      <button id="loginBtn" class="btn">Log in</button>
+      <button id="logoutBtn" class="btn btn-secondary hidden">Log out</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="status" class="card">
+      <div id="statusText" class="muted">Please log in to view your monthly total.</div>
+    </section>
+
+    <section id="dashboard" class="card hidden">
+      <div class="row">
+        <label for="monthSelect"><strong>Month</strong></label>
+        <select id="monthSelect"></select>
+        <button id="refreshBtn" class="btn btn-secondary">Refresh</button>
+      </div>
+
+      <div class="summary">
+        <div class="summary-card">
+          <div class="muted">Role</div>
+          <div id="roleLabel" class="big"></div>
+        </div>
+        <div class="summary-card">
+          <div class="muted">Total for this month</div>
+          <div id="totalFee" class="big">$0.00</div>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table id="rowsTable">
+          <thead id="tableHead"></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
